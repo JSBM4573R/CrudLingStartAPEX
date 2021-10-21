@@ -1,0 +1,28 @@
+CREATE DATABASE blog;
+
+CREATE TABLE roles (
+id int(20) AUTO_INCREMENT PRIMARY KEY,
+rol VARCHAR(50));
+
+INSERT INTO roles (rol) VALUES ("admin");
+INSERT INTO roles (rol) VALUES ("cliente");
+
+CREATE TABLE usuarios (
+id_usuario int(20) AUTO_INCREMENT PRIMARY KEY,
+nombres VARCHAR(50) NOT NULL,
+apellidos VARCHAR(50) NOT NULL,
+telefono int(20) NOT NULL,
+email VARCHAR(50) NOT NULL,
+password VARCHAR(50) NOT NULL,
+confirm_password VARCHAR(50) NOT NULL,
+rol_id int(20)
+);
+
+INSERT INTO usuarios (nombres,apellidos,telefono,email,password,confirm_password,rol_id) VALUES ("sebastian","Marroquin",7224585,"juan@gmail.com","juan123","juan123",2);
+INSERT INTO usuarios (nombres,apellidos,telefono,email,password,confirm_password,rol_id) VALUES ("Laura","Gonzales",3458585,"laura@gmail.com","laura123","laura123",1);
+
+--Creacion de llaves Foraneas.
+/* siempre va relacionado primero desde una foreing de una tabla hasta primary key de la otra*/
+/* Tabla persona (sueldo_persona) relacion Tabla sueldo (id_sueldo)*/
+ALTER TABLE usuarios ADD CONSTRAINT fk_rol_usuario
+FOREIGN KEY (rol_id) REFERENCES roles(id) ON DELETE RESTRICT ON UPDATE CASCADE;

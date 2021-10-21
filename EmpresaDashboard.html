@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LingStar</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingStar</title>
+
+    <!-- Estilos -->
+    <link rel="shortcut icon" href="img/LSbW.png">
+    <link rel="stylesheet" href="css/styleWsp.css">
+    <link rel="stylesheet" href="css/styleClienteInterfaz.css">
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="js/functionScriptClient.js"></script>
+
+     <!--Import AJAX-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- import js -->
+    <script src="js/functionScriptHeader.js"></script>
+
+    <!-- sweet alert 2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetAlert.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header" id="header">
+            <div>
+                <img class="logo" src="img/LogocutWwithoutback.png" >
+            </div>
+            <div class="items">
+                <!-- <p><script>document.write(new Date().getFullYear());</script></p> -->
+                <span class="user">Admin</span>
+                <span>|</span>
+                <a class="close" href="logout.php">Cerrar Sesion</a>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <span class="logo_name">BIENVENIDO</span>
+        </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="EmpresaDashboard.html">
+                        <i class='bx bx-user' ></i>
+                        <span class="link_name">Mi Cuenta</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="EmpresaListarClientes.html">
+                        <i class='bx bx-check-square' ></i>
+                        <span class="link_name">Clientes</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="EmpresaListarReservas.html">
+                        <i class='bx bxs-calendar-check' ></i>
+                        <span class="link_name">Reservas</span>
+                    </a> 
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <!--Formulario-cliente-->
+    <div class="contenido">
+        <div class="titulo-client">
+            <h1>MIS DATOS</h1>
+        </div>
+        <div class="formulario-client">
+            <div class="input-client">
+                <p>ID <input type="number" id="ClientID" placeholder="id"></p>
+                <p>NOMBRE <input type="text" id="Clientname" placeholder="Tu nombre"></p>
+                <p>APELLIDO <input type="text" id="lastname" placeholder="Tu apellido"></p>
+                <p>TELEFONO <input type="number" id="tel" placeholder="Tu telefono"></p>
+                <p>EDAD <input type="number" id="age" placeholder="Tu edad"></p>
+                <p>EMAIL <input type="email" id="email" placeholder="Tu email"></p>
+                <p>CONTRASEÑA <input type="password" id="password" placeholder="Tu contraseña"></p>
+            </div>
+        </div>
+        <div class="buttons-client">
+            <button class="btn btn-guardarClient" id="btn-agregarClient" onclick="agregarClient()">Agregar</button>
+            <button class="btn btn-listarClient" id="btn-listarClient" onclick="listarClient()">Listar</button>
+            <button class="btn btn-guardarEdicionClient" id="btn-guardarEdicionClient"
+                onclick="actualizarRegistroClient()" data-swal-toast-template='#my-template'>Actualizar</button>
+                <script>
+                    $(document).ready(function(){
+                        editarRegistroClient(1);
+                    })
+                </script>
+                <script>
+                    $(document).ready(function(){
+                        $("#btn-guardarEdicionClient").show();
+                    })
+                </script>
+                <script>
+                    $(document).ready(function(){
+                        $("#btn-agregarClient").hide();
+                    })
+                </script>
+                
+        </div>
+        <div class="listar-client" id="listadoClient"></div>
+        <div class="imagen-client">
+            <img class="img-client" src="img/Hidden-amico.svg" alt="google-image">
+        </div>
+    </div>
+    <template id='my-template'>
+        <swal-title>Actualizacion realizada correctamente</swal-title>
+    </template>     
+    
+    <script>
+        Swal.bindClickHandler()
+
+        Swal.mixin({
+            modal: true,
+        }).bindClickHandler('data-swal-toast-template')
+    </script>
+                
+                
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LingStar</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingStar</title>
+
+    <!-- Estilos -->
+    <link rel="shortcut icon" href="img/LSbW.png">
+    <link rel="stylesheet" href="css/styleWsp.css">
+    <link rel="stylesheet" href="css/styleClienteInterfaz.css">
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ScriptFunctionsJS -->
+    <script src="js/functionScriptReserva.js"></script>
+
+    <!-- import js -->
+    <script src="js/functionScriptHeader.js"></script>
+
+     <!--Import AJAX-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- sweet alert 2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="header" id="header">
+            <div>
+                <img class="logo" src="img/LogocutWwithoutback.png" >
+            </div>
+            <div class="items">
+                <!-- <p><script>document.write(new Date().getFullYear());</script></p> -->
+                <span class="user">Cliente</span>
+                <span>|</span>
+                <a class="close" href="logout.php">Cerrar Sesion</a>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <span class="logo_name">BIENVENIDO</span>
+        </div>
+        
+            <ul class="nav-links">
+                <li>
+                    <a href="CLienteDashboard.html">
+                        <i class='bx bx-money'></i>
+                        <span class="link_name">Precios</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="ClienteMiCuenta.html">
+                        <i class='bx bx-user' ></i>
+                        <span class="link_name">Mi Cuenta</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="Reservar.html">
+                        <i class='bx bx-check-square' ></i>
+                        <span class="link_name">Reservar</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="MisReservas.html">
+                        <i class='bx bxs-calendar-check' ></i>
+                        <span class="link_name">Mis Reservas</span>
+                    </a> 
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <!--Formulario-cliente-->
+    <div class="contenido">
+        <div class="titulo-Reserva">
+            <h1>RESERVA</h1>
+        </div>
+        <div class="formulario-Reserva">
+            <div class="input-Reserva">
+                <p>CODIGO <input type="number" id="ReservaID" placeholder="codigo"></p>
+                <p>Habitacion <select id="room" class="input-room"> <option >Habitacion Pequeña</option><option >Habitacion Mediana</option><option >Habitacion Grande</option></select></p>
+                <p>FECHA DE INGRESO <input type="date" id="startdate" placeholder="ingreso"></p>
+                <p>FECHA DE SALIDA <input type="date" id="enddate" placeholder="salida"></p>
+            </div>
+        </div>
+        <div class="buttons-Reserva">
+            <button class="btn btn-guardarReserva" id="btn-agregarReserva" onclick="agregarReserva()" data-swal-toast-template='#my-template' >Reservar</button>
+            <button class="btn btn-listarReserva" id="btn-listarReserva" onclick="listarReserva()">Listar</button>
+            <button class="btn btn-guardarEdicionReserva" id="btn-guardarEdicionReserva"
+                onclick="actualizarRegistroReserva()">Actualizar</button>
+                <script>
+                    $(document).ready(function(){
+                        $("#btn-guardarEdicionReserva").hide();
+                    })
+                </script>
+                <script>
+                    $(document).ready(function(){
+                        $("#btn-guardarEdicionReserva").show();
+                    })
+                </script>
+                <script>
+                    $(document).ready(function(){
+                        $("#btn-listarReserva").hide();
+                    })
+                </script>
+        </div>
+        <div class="listar-Reserva" id="listadoReserva"></div>
+        <script>
+            $(document).ready(function(){
+                $("#btn-guardarEdicionReserva").hide();
+            })
+        </script>
+        <div class="imagen-client">
+            <img class="img-client" src="img/Date picker-amico.svg" alt="google-image">
+        </div>
+    </div>
+             
+    <template id='my-template'>
+        <swal-title>Reserva realizada correctamente</swal-title>
+    </template>     
+    
+    <script>
+        Swal.bindClickHandler()
+
+        Swal.mixin({
+            modal: true,
+        }).bindClickHandler('data-swal-toast-template')
+    </script>
+
+    <!-- Boton de Whatsapp -->
+    <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+</body>
+</html>

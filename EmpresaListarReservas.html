@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LingStar</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingStar</title>
+
+    <!-- Estilos -->
+    <link rel="shortcut icon" href="img/LSbW.png">
+    <link rel="stylesheet" href="css/styleWsp.css">
+    <link rel="stylesheet" href="css/styleClienteInterfaz.css">
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ScriptFunctionsJS -->
+    <script src="js/functionScriptReserva.js"></script>
+
+     <!--Import AJAX-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- sweet alert 2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetAlert.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+        <div>
+            <img class="logo" src="img/LogocutWwithoutback.png" >
+        </div>
+        <div class="items">
+            <!-- <p><script>document.write(new Date().getFullYear());</script></p> -->
+            <span class="user">Admin</span>
+            <span>|</span>
+            <a class="close" href="logout.php">Cerrar Sesion</a>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <span class="logo_name">BIENVENIDO</span>
+        </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="EmpresaDashboard.html">
+                        <i class='bx bx-user' ></i>
+                        <span class="link_name">Mi Cuenta</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="EmpresaListarClientes.html">
+                        <i class='bx bx-check-square' ></i>
+                        <span class="link_name">Clientes</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="EmpresaListarReservas.html">
+                        <i class='bx bxs-calendar-check' ></i>
+                        <span class="link_name">Reservas</span>
+                    </a> 
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            listarReserva();
+        })
+    </script>
+    <div class="listar-Reserva" id="listadoReserva"></div>
+
+                
+            
+     <!-- Boton de Whatsapp -->
+     <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+
+</body>
+</html>
